@@ -12,7 +12,7 @@ use yii\helpers\Html;
 
 
 NavBar::begin([
-    'brandLabel' => Html::img('@web/images/logo1.png', ['alt' => Yii::$app->name, 'style' => 'height: 50px; width: 121px; top: 10px; left: 10px;']),
+    'brandLabel' => Html::img('@web/images/logo.png', ['alt' => Yii::$app->name, 'style' => 'height: 40px; width: 101px; top: 10px; left: 10px;']),
     'brandUrl' => Yii::$app->homeUrl,
     'options' => ['class' => 'navbar-expand-lg navbar-light bg-light shadow-sm'],
     'innerContainerOptions' => [
@@ -32,16 +32,44 @@ if (Yii::$app->user->isGuest) {
     ];
 }
 ?>
-  <form action="<?php echo Url::to(['/video/search']) ?>"
-        class="form-inline my-2 my-lg-0">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search"
+
+
+  <form class="site-search ml-auto" action="<?php echo Url::to(['/video/search']) ?>"
+        >
+    <input class="form-control p-2" type="search" placeholder="Search"
            name="keyword"
            value="<?php echo Yii::$app->request->get('keyword') ?>">
-    <button class="btn btn-outline-success my-2 my-sm-0">Search</button>
+           <button class="search-btn" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></button>
+
   </form>
 <?php
+
+?>
+<div class="user-menu">
+
+<button class="btn" aria-label="Upload">
+        <i class="fas fa-upload" aria-hidden="true"></i>
+    </button>
+
+<button class="btn" aria-label="YouTube Apps">
+        <i class="fas fa-th" aria-hidden="true"></i>
+    </button>
+
+<button class="btn" aria-label="Notifications">
+        <i class="fas fa-bell" aria-hidden="true"></i>
+    </button>
+
+<button class="btn" aria-label="Account">
+        <i class="fas fa-user-circle" aria-hidden="true"></i>
+    </button>
+
+</div>
+
+
+<?php
+
 echo Nav::widget([
-    'options' => ['class' => 'navbar-nav ml-auto'],
+    'options' => ['class' => 'navbar-nav '],
     'items' => $menuItems,
 ]);
 NavBar::end();

@@ -9,7 +9,7 @@ use yii\helpers\Html;
 
 $this->title = $name;
 ?>
-<div class="site-error">
+<!-- <div class="site-error">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -24,4 +24,10 @@ $this->title = $name;
         Please contact us if you think this is a server error. Thank you.
     </p>
 
-</div>
+</div> -->
+
+
+<div class="error">404</div>
+<br /><br />
+<span class="info">File not found</span>
+<img src="http://images2.layoutsparks.com/1/160030/too-much-tv-static.gif" class="static" />

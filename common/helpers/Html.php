@@ -1,9 +1,5 @@
 <?php
-/**
- * User: TheCodeholic
- * Date: 4/18/2020
- * Time: 10:18 AM
- */
+
 
 namespace common\helpers;
 
